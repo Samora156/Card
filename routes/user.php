@@ -44,6 +44,7 @@ Route::post('user/update/{id}',[PenggunaController::class, 'update'])->name('upd
 Route::post('user/pengguna/hapus',[PenggunaController::class, 'delete']);
 
 Route::get('user/pengguna/{id}/show',[PenggunaController::class, 'show'])->name('show');
+Route::get('user/print/{id}', [PenggunaController::class, 'print']);
 
 // lembaga
 
