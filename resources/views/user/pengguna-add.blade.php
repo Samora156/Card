@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Tambah Pengguna')
+@section('title', 'Add Card')
 
 @section('content')
     <!--begin::Content-->
@@ -65,7 +65,7 @@
                                         <!--begin::Heading-->
                                         <div class="row">
                                             <div class="col-lg-9 col-xl-6 offset-xl-3">
-                                                <h3 class="font-size-h6 mb-5">-------------</h3>
+                                                <h3 class="font-size-h6 mb-5"></h3>
                                             </div>
                                         </div>
                                         <!--end::Heading-->
@@ -115,32 +115,6 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-xl-3 col-lg-3 text-right col-form-label">Tempat Lahir</label>
-                                            <div class="col-lg-9 col-xl-6">
-                                                <div class="input-group input-group-lg input-group-solid">
-                                                    <div class="input-group-prepend"><span
-                                                            class="input-group-text"><i
-                                                                class="la la-city"></i></span></div>
-                                                    <input type="text" name="tempat_lahir"
-                                                        class="form-control form-control-lg form-control-solid"
-                                                        value="" placeholder="Malang" required/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-xl-3 col-lg-3 text-right col-form-label">Tanggal Lahir</label>
-                                            <div class="col-lg-9 col-xl-6">
-                                                <div class="input-group input-group-lg input-group-solid">
-                                                    <div class="input-group-prepend"><span
-                                                            class="input-group-text"><i
-                                                                class="la la-calendar"></i></span></div>
-                                                    <input type="date" name="tanggal_lahir"
-                                                        class="form-control form-control-lg form-control-solid"
-                                                        value="" placeholder="" required/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 text-right col-form-label">Jenis Kelamin</label>
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group input-group-lg input-group-solid">
@@ -163,6 +137,19 @@
                                                     <input type="text" name="jabatan"
                                                         class="form-control form-control-lg form-control-solid"
                                                         value="" placeholder="Assistant Manager" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-xl-3 col-lg-3 text-right col-form-label">Email</label>
+                                            <div class="col-lg-9 col-xl-6">
+                                                <div class="input-group input-group-lg input-group-solid">
+                                                    <div class="input-group-prepend"><span
+                                                            class="input-group-text"><i
+                                                                class="la la-at"></i></span></div>
+                                                    <input type="text" name="email"
+                                                        class="form-control form-control-lg form-control-solid"
+                                                        value="" placeholder="user@gmail.com" required/>
                                                 </div>
                                             </div>
                                         </div>

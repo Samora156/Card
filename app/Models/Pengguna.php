@@ -14,11 +14,20 @@ class Pengguna extends Model
     protected $fillable = [
         'foto',
         'nama',
-        'tempat_lahir',
-        'tanggal_lahir',
         'jenis_kelamin',
         'jabatan',
+        'email',
         'tanggal_bergabung',
-        'tanggal_berakhir'
+        'tanggal_berakhir',
     ];
+
+    public function user() {
+
+        return $this->belongsTo(User::class);
+    }
+
+    public function template() {
+
+        return $this->hasOne(Template::class);
+    }
 }

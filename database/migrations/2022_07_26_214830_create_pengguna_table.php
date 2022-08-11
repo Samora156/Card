@@ -15,14 +15,16 @@ class CreatePenggunaTable extends Migration
     {
         Schema::create('pengguna', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('template_id')->nullable();
+            $table->string('no_id')->unique();
             $table->string('foto')->default('assets/media/users/default.jpg');
-            $table->string('nama');
-            $table->string('tempat_lahir');
-            $table->string('tanggal_lahir');
-            $table->string('jenis_kelamin');
-            $table->string('jabatan');
-            $table->string('tanggal_bergabung');
-            $table->string('tanggal_berakhir');
+            $table->string('nama')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('jabatan')->nullable();
+            $table->string('email')->nullable();
+            $table->string('tanggal_bergabung')->nullable();
+            $table->string('tanggal_berakhir')->nullable();
             $table->timestamps();
         });
     }

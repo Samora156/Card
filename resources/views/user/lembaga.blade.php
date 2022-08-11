@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Lembaga')
+@section('title', 'My Company')
 
 @section('content')
     <!--begin::Content-->
@@ -13,7 +13,7 @@
                 <div class="d-flex align-items-center flex-wrap mr-2">
                     <!--begin::Title-->
                     <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-                        Lembaga </h5>
+                        Perusahaan </h5>
                     <!--end::Title-->
 
                     <!--begin::Separator-->
@@ -23,7 +23,8 @@
 
                     <!--begin::Search Form-->
                     <div class="d-flex align-items-center" id="kt_subheader_search">
-                        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">Nama Lembaga</span>
+                        {{-- <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">Nama Perusahaan</span> --}}
+                        {{-- <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ $lembaga->nama }}</span> --}}
                     </div>
                     <!--end::Search Form-->
                 </div>
@@ -58,7 +59,7 @@
                                         <div class="d-flex align-items-center mr-3">
                                             <!--begin::Name-->
                                             <a href="#" class="d-flex align-items-center text-dark text-hover-primary font-size-h5 font-weight-bold mr-3">
-                                                Nama Lembaga
+                                                Nama Perusahaan
                                             </a>
                                             <!--end::Name-->
                                         </div>
@@ -76,7 +77,7 @@
                                                         </g>
                                                     </svg>
                                                     <!--end::Svg Icon-->
-                                                </span> lembaga@gmail.com
+                                                </span> perusahaan@gmail.com
                                             </a>
                                             <a href="#" class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
                                                 <span class="svg-icon svg-icon-md svg-icon-gray-500 mr-1">
@@ -164,7 +165,7 @@
                                                     </svg>
                                                     <!--end::Svg Icon-->
                                                 </span> </span>
-                                            <span class="nav-text font-weight-bold">Informasi Lembaga</span>
+                                            <span class="nav-text font-weight-bold">Informasi Perusahaan</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -235,7 +236,7 @@
                                             <label class="col-xl-3 col-lg-3 text-right col-form-label">Nama</label>
                                             <div class="col-lg-9 col-xl-6">
                                                 <input class="form-control form-control-lg form-control-solid"
-                                                    type="text" name="nama" value="" placeholder="Lembaga" required/>
+                                                    type="text" name="nama" value="" placeholder="Perusahaan" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -274,7 +275,7 @@
                                                                 class="la la-at"></i></span></div>
                                                     <input type="text" name="email"
                                                         class="form-control form-control-lg form-control-solid"
-                                                        value="" placeholder="lembaga@gmail.com" required/>
+                                                        value="" placeholder="perusahaan@gmail.com" required/>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{ListPenggunaController, ListLembagaController};
+use App\Http\Controllers\Admin\{AdminController, ListPenggunaController, ListLembagaController};
+
+use Illuminate\Support\Facades\Auth;
 
 /*
 |----------------------------------------------------------------------
@@ -16,7 +18,7 @@ use App\Http\Controllers\Admin\{ListPenggunaController, ListLembagaController};
 
 // laravel
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -24,23 +26,26 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login.login');
-});
+})->middleware('guest')->name('login');//->name('login');
 
 // dashboard
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+// Route::get('/admin', function () {
+//     return view('admin.index');
+// });
+
+Route::get('/admin', [AdminController::class, 'home'])->name('home')->middleware('admin');
+
 
 // list pengguna
 
-Route::get('admin/list-pengguna', [ListPenggunaController::class, 'index'])->name('index');
-Route::post('admin/list-pengguna/data', [ListPenggunaController::class, 'data']);
+Route::get('admin/list-pengguna', [ListPenggunaController::class, 'index'])->name('index')->middleware('admin');
+Route::post('admin/list-pengguna/data', [ListPenggunaController::class, 'data'])->middleware('admin');
 
 // list lembaga
 
-Route::get('admin/list-lembaga', [ListLembagaController::class, 'index'])->name('index');
-Route::post('admin/list-lembaga/data', [ListLembagaController::class, 'data']);
+Route::get('admin/list-lembaga', [ListLembagaController::class, 'index'])->name('index')->middleware('admin');
+Route::post('admin/list-lembaga/data', [ListLembagaController::class, 'data'])->middleware('admin');
 
 // card
 

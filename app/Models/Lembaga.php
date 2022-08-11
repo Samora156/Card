@@ -19,4 +19,5 @@ class Lembaga extends Model
         'email',
         'website',
     ];
+
 }

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\{PenggunaController, LembagaController};
+use App\Http\Controllers\User\{UserController, PenggunaController, LembagaController};
+use App\Models\Pengguna;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |----------------------------------------------------------------------
@@ -14,44 +16,53 @@ use App\Http\Controllers\User\{PenggunaController, LembagaController};
 |
 */
 
-// laravel
-Route::get('/', function () {
+// Laravel
+Route::get('/welcome', function () {
     return view('welcome');
-});
+})->middleware('guest');
 
-// login
+// Login
 
 Route::get('/login', function () {
     return view('login.login');
-});
+ })->middleware('guest')->name('login');//->name('login');
 
-// dashboard
-Route::get('/user', function () {
-    return view('user.index');
-});
+// Dashboard
+
+Route::get('/user', [UserController::class, 'home'])->name('home')->middleware('user');
 
 
-// pengguna
-Route::get('user/pengguna', [PenggunaController::class, 'index'])->name('index');
-Route::post('user/pengguna/data', [PenggunaController::class, 'data']);
+// My Card
+Route::get('user/pengguna', [PenggunaController::class, 'index'])->name('index')->middleware('user');
+Route::post('user/pengguna/data', [PenggunaController::class, 'data'])->middleware('user');
 
-Route::get('user/pengguna-add', [PenggunaController::class, 'tambah'])->name('tambah');
-Route::post('user/insert', [PenggunaController::class, 'insert'])->name('insert');
+Route::get('user/pengguna-add', [PenggunaController::class, 'tambah'])->name('tambah')->middleware('user');
+Route::post('user/insert', [PenggunaController::class, 'insert'])->name('insert')->middleware('user');
 
-Route::get('user/pengguna/{id}/edit',[PenggunaController::class, 'edit'])->name('edit');
-Route::post('user/update/{id}',[PenggunaController::class, 'update'])->name('update');
+Route::get('user/pengguna/{id}/edit',[PenggunaController::class, 'edit'])->name('edit')->middleware('user');
+Route::post('user/update/{id}',[PenggunaController::class, 'update'])->name('update')->middleware('user');
 
-Route::post('user/pengguna/hapus',[PenggunaController::class, 'delete']);
+Route::post('user/pengguna/hapus',[PenggunaController::class, 'delete'])->middleware('user');
 
-Route::get('user/pengguna/{id}/show',[PenggunaController::class, 'show'])->name('show');
-Route::get('user/print/{id}', [PenggunaController::class, 'print']);
+Route::get('user/pengguna/{id}/show',[PenggunaController::class, 'show'])->name('show')->middleware('user');
 
-// lembaga
 
-Route::get('user/lembaga', [LembagaController::class, 'lembaga'])->name('lembaga');
+// My Company
 
-Route::get('user/lembaga', [LembagaController::class, 'lembaga_tambah'])->name('lembaga_tambah');
-Route::post('user/lembaga-insert', [LembagaController::class, 'lembaga_insert'])->name('lembaga_insert');
+Route::get('user/lembaga', [LembagaController::class, 'lembaga'])->name('lembaga')->middleware('user');
+
+Route::get('user/lembaga', [LembagaController::class, 'lembaga_tambah'])->name('lembaga_tambah')->middleware('user');
+Route::post('user/lembaga-insert', [LembagaController::class, 'lembaga_insert'])->name('lembaga_insert')->middleware('user');
 
 // Route::get('user/lembaga', [LembagaController::class, 'lembaga_edit'])->name('lembaga_edit');
 // Route::post('user/lembaga-update', [LembagaController::class, 'lembaga_update'])->name('lembaga_update');
+
+// My List Card 
+
+Route::get('user/list-kartu', function () {
+    return view('user.list-kartu');
+});
+
+Route::get('card/{id}', [PenggunaController::class, 'card']);
+
+// Route::get('user/list-kartu', [ListKartuController::class, 'list_kartu'])->name('list_kartu');

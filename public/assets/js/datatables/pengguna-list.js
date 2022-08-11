@@ -38,19 +38,12 @@ var KTDatatableJsonRemoteDemo = function () {
 
             // columns definition
             columns: [{
-                field: 'id',
-                title: '#',
-                sortable: 'desc',
-                width: 20,
-                selector: true,
-                textAlign: 'center',
-            }, {
                 field: 'name',
                 title: 'Nama',
                 width: 250,
                 template: function (data) {
                     var number = KTUtil.getRandomInt(1, 14);
-                    var user_img = 'background-image:url(\'' + data.foto + '\')';
+                    var user_img = 'background-image:url(assets/media/users/blank.png)'; 
 
                     var output = '';
                     output = '<div class="d-flex align-items-center">\
@@ -59,19 +52,17 @@ var KTDatatableJsonRemoteDemo = function () {
                             </div>\
                             <div class="ml-2">\
                                 <a href="admin/siswa/' + data.name + '" class="text-dark-75 font-weight-bold line-height-sm text-hover-primary">' + data.name + '</a>\
-                                <br>\
-                                <a href="admin/sekolah/' + data.jabatan + '" class="font-size-sm text-dark-50 text-hover-primary">' + data.jabatan + '</a>\
                             </div>\
                         </div>';
 
                     return output;
                 },
             }, {
-                field: 'username',
-                title: 'Username',
-            }, {
                 field: 'email',
                 title: 'Email',
+            }, {
+                field: 'role',
+                title: 'Role',
             }],
         });
 

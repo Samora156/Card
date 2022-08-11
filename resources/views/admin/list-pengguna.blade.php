@@ -103,24 +103,10 @@
                 <div class="card card-custom gutter-b mb-7" id="card-info">
                     <div class="card-body">
                         <div class="row align-items-center">
-                            <div class="col-md-6 my-2 my-md-0">
+                            <div class="col-md-12 my-2 my-md-0">
                                 <div class="input-icon">
                                     <input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
                                     <span><i class="flaticon2-search-1 text-muted"></i></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2 my-md-0">
-                                <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
-                                    <select class="form-control" id="kt_datatable_search_status">
-                                        <option value="">All</option>
-                                        <option value="1">Pending</option>
-                                        <option value="2">Delivered</option>
-                                        <option value="3">Canceled</option>
-                                        <option value="4">Success</option>
-                                        <option value="5">Info</option>
-                                        <option value="6">Danger</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>

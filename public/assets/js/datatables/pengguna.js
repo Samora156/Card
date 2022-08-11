@@ -50,7 +50,7 @@ var KTDatatableJsonRemoteDemo = function () {
             {
                 field: 'nama',
                 title: 'Nama',
-                width: 250,
+                width: 230,
                 template: function (data) {
                     var number = KTUtil.getRandomInt(1, 14);
                     var user_img = 'background-image:url(\'' + data.foto + '\')';
@@ -70,20 +70,19 @@ var KTDatatableJsonRemoteDemo = function () {
                     return output;
                 },
             }, {
-                field: 'tempat_lahir',
-                title: 'Tempat Lahir',
-            }, {
-                field: 'tanggal_lahir',
-                title: 'Tanggal Lahir',
-            }, {
                 field: 'jenis_kelamin',
                 title: 'Jenis Kelamin',
             }, {
                 field: 'tanggal_bergabung',
                 title: 'Tanggal Bergabung',
+                width: 160,
             }, {
                 field: 'tanggal_berakhir',
                 title: 'Tanggal Berakhir',
+                width: 150,
+            }, {
+                field: 'no_id',
+                title: 'No ID',
             }, {
                 field: '',
                 title: 'Aksi',

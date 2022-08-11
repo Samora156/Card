@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* Card 1 */
+.container{
+    display: grid;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    grid-template-areas: "main";
+    font-family: 'Josefin Sans', sans-serif;}
+
+.container img{
+    width: 100%;
+}
+
+.image-section{
+    grid-area: main;
+}
+
+.text-section{
+    grid-area: main;
+    position: relative;
+}
+
+.profile-nama{
+    margin-top: 20px;
+}
+
+#nama-id
+{
+    font-size: 30px;
+}
+
+#no-id{
+    font-size: 20px;
+}
+
+#profile-img{
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-top: 1px;
+    margin-left: 15px;
+    border-radius: 50%;
+}
+
+#detail{
+    font-size: 18px;
+}
+
+#profile-jabatan{
+    margin-top: 18px;
+    font-size: large;
+    color: white;
+}
+
+#profile-telp{
+    margin-top: 30px;
+}
+
+#profile-telepon{
+    margin-top: -30px;
+}
+
+#profile-tanggal{
+    margin-top: -5%;
+    /* color: white; */
+}
+
+#logo-lembaga{
+    margin-top: -5%;
+    width: 250px;
+}
+
+#profile-email{
+    margin-top: -5%;
+}
+
+#profile-alamat{
+    margin-top: -5%;
+}
+
+#qrcode{
+    margin-left: 15px;
+    margin-top: 65px;
+}
+
+.active{
+    display: block !important;
+}
+
+.container-1{
+    display: grid;
+    width: 340px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+    grid-template-areas: "main";
+}
+
+.container-1 img{
+    width: 100%;
+}
+
+#id_card_2{
+    margin-top: 100px;
+}

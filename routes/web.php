@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,15 @@ Route::get('/', function () {
 
 // Auth::routes();
 // Route::get('login',[LoginController::class,'index'])->name('login')->middleware('ceklogin');
+// Route::post('login',[LoginController::class,'login'])->name('postlogin');
+// Route::post('logout',[loginController::class,'logout'])->name('logout');
+Auth::routes();
+
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('guest');
+// Route::get('/welcome', [HomeController::class, 'home'])->name('home');
+
+// Route::get('register',[RegisterController::class,'index'])->name('register')->middleware('ceklogin');
 // Route::post('login',[LoginController::class,'login'])->name('postlogin');
 // Route::post('logout',[loginController::class,'logout'])->name('logout');
