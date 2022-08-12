@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             @foreach ($pengguna as $p)
-                            <div class="card-body login login-5 login-signin-on  col " align="center" id="kt_login" style="height: 1250px">
+                            <div class="card-body login login-5 login-signin-on  col " align="center" id="kt_login" style="height: 1100px">
                                 {{-- // Preview ID Card --}}
                                 <div class="position-relative overflow-hidden">
                                     <div id="id_card_1" class="tabcontent">
@@ -62,25 +62,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        {{-- <div class="container-1">
-                                            <div class="image-section">
-                                                <img src="{{ asset('assets/media/desain/2.png') }}" alt="">
-                                            </div>
-                                            <div class="text-section" align="center">
-                                                <img src="{{ asset('assets/media/desain/SANAI.svg') }}" id="logo-lembaga" alt="Avatar">
-                                                <p style="margin-top:-8%; ">Nama :</p>
-                                                <p style="font-weight: bold;margin-top:-1%; ">{{ $p->nama }}</p>
-                                                <p style="margin-top:1%; ">Tempat Lahir :</p>
-                                                <p style="font-weight: bold;margin-top:-1%; ">{{ $p->tempat_lahir }}</p>
-                                                <p style="margin-top:1%; ">Tanggal Lahir :</p>
-                                                <p style="font-weight: bold;margin-top:-1%; ">{{ $p->tanggal_lahir }}</p>
-                                                <p style="margin-top:1%; ">Jenis Kelamin :</p>
-                                                <p style="font-weight: bold;margin-top:-1%; ">{{ $p->jenis_kelamin }}</p>      	
-                                                <p style="margin-top:1%; ">Jabatan :</p>
-                                                <p style="font-weight: bold;margin-top:-1%; ">{{ $p->jabatan }}</p>                               
-                                            </div>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -110,30 +91,9 @@
                                 <div class="flex-shrink-0 mr-7 mt-lg-0 mt-3 desain">
                                     @foreach ($card as $c)
                                         <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                            <button onclick="template({{ $c->id }})" class="symbol symbol-50 symbol-lg-150" style="border: none" id="kt_login_signin"><img src="{{ asset($c->template) }}" alt="image" /></button>
+                                            <button onclick="template({{ $c->id }})" class="btn symbol symbol-50 symbol-lg-150" style="border: none" id="kt_login_signin"><img src="{{ asset($c->template) }}" alt="image" /></button>
                                         </div>
                                     @endforeach
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <a href="#id_card_2" class="symbol symbol-50 symbol-lg-150" id="kt_login_signup"><img src="{{ asset('assets/media/desain/B.jpg') }}" alt="image" /></a>
-                                    </div>
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <img src="{{ asset('assets/media/desain/C.jpg') }}" id="card_3" alt="image" />
-                                    </div>
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <img src="{{ asset('assets/media/desain/D.jpg') }}" id="card_4" alt="image" />
-                                    </div>
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <img src="{{ asset('assets/media/desain/E.jpg') }}" id="card_5" alt="image" />
-                                    </div>
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <img src="{{ asset('assets/media/desain/F.jpg') }}" id="card_6" alt="image" />
-                                    </div>
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <img src="{{ asset('assets/media/desain/G.jpg') }}" id="card_7" alt="image" />
-                                    </div>
-                                    <div class="symbol symbol-50 symbol-lg-150 gambar">
-                                        <img src="{{ asset('assets/media/desain/H.jpg') }}" id="card_8" alt="image" />
-                                    </div>
                                 </div>
                             </div>
                             <!--end::Body-->
@@ -165,13 +125,9 @@
             url: url,
             method: "GET",
             dataType: 'json',
-            success: function(response){            
-                let coba = response['0'];
-                console.log(response);
+            success: function(response){
                 let foto = $('#template');
-                // var template = '\' '+response.data.template+' \'';
                 var template = response.data[0].template;
-                console.log(template);
                 foto.attr('src', template);
             }
         });

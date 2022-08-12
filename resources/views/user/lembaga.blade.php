@@ -45,7 +45,8 @@
                             <!--begin::Pic-->
                             <div class="flex-shrink-0 mr-7">
                                 <div class="symbol symbol-50 symbol-lg-120 symbol-light-danger">
-                                    <span class="font-size-h3 symbol-label font-weight-boldest">LOGO</span>
+                                    {{-- <span class="font-size-h3 symbol-label font-weight-boldest">LOGO</span> --}}
+                                    <img src="{{ $lembaga ? $lembaga->foto : 'assets/media/users/blank.png' }}" alt="">
                                 </div>
                             </div>
                             <!--end::Pic-->
@@ -59,7 +60,7 @@
                                         <div class="d-flex align-items-center mr-3">
                                             <!--begin::Name-->
                                             <a href="#" class="d-flex align-items-center text-dark text-hover-primary font-size-h5 font-weight-bold mr-3">
-                                                Nama Perusahaan
+                                                </span> {{ $lembaga ? $lembaga->nama : 'Nama Perusahaan' }}
                                             </a>
                                             <!--end::Name-->
                                         </div>
@@ -77,7 +78,7 @@
                                                         </g>
                                                     </svg>
                                                     <!--end::Svg Icon-->
-                                                </span> perusahaan@gmail.com
+                                                </span> {{ $lembaga ? $lembaga->email : 'perusahaan@gmail.com' }}
                                             </a>
                                             <a href="#" class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
                                                 <span class="svg-icon svg-icon-md svg-icon-gray-500 mr-1">
@@ -103,7 +104,7 @@
                                                             <path d="M5,10.5 C5,6 8,3 12.5,3 C17,3 20,6.75 20,10.5 C20,12.8325623 17.8236613,16.03566 13.470984,20.1092932 C12.9154018,20.6292577 12.0585054,20.6508331 11.4774555,20.1594925 C7.15915182,16.5078313 5,13.2880005 5,10.5 Z M12.5,12 C13.8807119,12 15,10.8807119 15,9.5 C15,8.11928813 13.8807119,7 12.5,7 C11.1192881,7 10,8.11928813 10,9.5 C10,10.8807119 11.1192881,12 12.5,12 Z" fill="#000000" fill-rule="nonzero"/>
                                                         </g>
                                                     </svg><!--end::Svg Icon-->
-                                                </span> Jln. Raya Tlogomas
+                                                </span> {{ $lembaga ? $lembaga->alamat : 'Jl. Raya Tlogomas' }}
                                             </a>
                                         </div>
                                         <!--end::Contacts-->

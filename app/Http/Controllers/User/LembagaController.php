@@ -11,8 +11,8 @@ class LembagaController extends Controller
 {
     public function lembaga() {
 
-        $lembaga = Lembaga::where('email', Auth::user()->email)->first();
-        dd($lembaga);
+        $lembaga = Lembaga::where('id', Auth::user()->id)->first();
+        // dd($lembaga);
 
         return view ('user.lembaga', compact('lembaga'));
     }
